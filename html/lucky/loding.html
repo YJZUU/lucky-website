@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang = "ko">
+
+
+<head>
+
+<title>이동 중</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="./img/pixel/logo.png"/>                         <!-- @ 로고 제작 후 바꾸기 -->
+
+<link rel="stylesheet" href="./css/loding.css">
+<script src="./js/loding.js"></script>
+
+<script>
+    // 우클릭 금지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  
+    // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+        (e.ctrlKey && e.key === 'U') || 
+        (e.ctrlKey && e.key === 'S') || 
+        (e.ctrlKey && e.key === 'P')
+      ) {
+        e.preventDefault();
+      }
+    });
+  
+    // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+    (function() {
+      const threshold = 160; // 개발자 도구 감지 기준
+      const detectDevTools = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  
+        if (widthThreshold || heightThreshold) {
+          document.body.innerHTML = ""; // 화면 내용을 비움
+        }
+      };
+      setInterval(detectDevTools, 1000); // 1초마다 감지
+    })();
+  </script>
+  
+
+</head>
+
+
+
+
+<body>
+
+    
+<!-- 로딩 화면 -->
+<div id="loading-screen">
+    <h1>
+        <span>이</span>
+        <span>동</span>
+        <span> </span>
+        <span>중</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+    </h1>
+</div>
+
+</body>
+
+
+
+</html>

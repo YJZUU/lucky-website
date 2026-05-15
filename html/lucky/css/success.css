@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(227, 255, 214);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;                               /* 스크롤바 제거 */
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;
+    ::selection {  background-color: #8aad60;}
+}
+
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+h1 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: black;
+}
+
+p {
+    position: relative;
+    left: 2%;
+    color: rgb(39, 108, 63);
+    font-size: 30px;
+}
+
+
+
+
+.fortune-container {
+    position: relative;
+    text-align: center; /* 텍스트가 가운데 정렬되도록 */
+    top: 30%; /* 클로버와 문구를 화면 아래로 20% 정도 이동 */
+}
+
+.clover {
+    position: absolute; /* 화면 중앙 배치를 위한 절대 위치 */
+    top: 30%; /* 수직 중심 */
+    left: 50%; /* 수평 중심 */
+    transform: translate(-50%, -50%); /* 정확히 중앙에 배치 */
+    width: 500px; /* 클로버 크기 */
+    height: 500px; /* 클로버 크기 */
+    background: url('../img/fortune.png') no-repeat center center;
+    background-size: contain;
+    animation: spin-fade 2s ease-in-out forwards; /* 회전 및 사라지는 애니메이션 */
+}
+
+.fortune-text {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -70%); /* 클로버 위쪽에 위치하게 조정 */
+    font-size: 24px;
+    color: rgb(101, 101, 101);
+    opacity: 1; /* 초기 상태에서 보임 */
+    animation: fade-out 2s ease-in-out forwards; /* 텍스트가 사라지는 애니메이션 */
+}
+
+
+
+
+/* 운세 결과 */
+
+.fortune-result {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  opacity: 0; /* 처음에는 보이지 않도록 설정 */
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+
+#fortune-result .percentage {
+  font-size: 36px !important;
+  color: #4CAF50 !important; /* 초록색 */
+  position: relative !important;
+  top: 10px !important;
+  left: 0 !important;
+  text-align: center !important;
+}
+
+#fortune-result .fortune-text {
+  font-size: 24px !important;
+  color: #555 !important;
+  position: relative !important;
+  top: 40px !important;
+  left: 0 !important;
+  text-align: center !important;
+}
+
+#fortune-result .advice {
+  font-size: 20px !important;
+  color: #ff6347 !important;
+  font-style: italic !important;
+  position: relative !important;
+  top: 80px !important;
+  left: 0 !important;
+  text-align: center !important;
+}
+
+
+@keyframes spin-fade {
+  0% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg); /* 초기 크기와 회전 */
+      opacity: 1; /* 완전히 보이는 상태 */
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.2) rotate(180deg); /* 확대 및 회전 */
+      opacity: 0.7; /* 약간 투명 */
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1) rotate(360deg); /* 원래 크기와 회전 */
+      opacity: 0; /* 완전히 사라짐 */
+  }
+}
+
+@keyframes fade-out {
+  0% {
+      opacity: 1; /* 처음에는 보임 */
+  }
+  100% {
+      opacity: 0; /* 사라짐 */
+  }
+}

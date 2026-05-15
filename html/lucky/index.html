@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang = "ko">
+
+<head>
+  <title>ZUU</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">       <!-- 캐시 저장 x, 항상 최신 버전 유지 -->
+  <meta name="robots" content="noindex">                                                <!-- 검색엔진 노출 x -->
+  <link rel="icon" type="image/png" href="./img/pixel/logo.png"/>
+  <link rel="stylesheet" href="./css/style.css">        <!-- 꾸미기 -->
+  <link rel="stylesheet" href="./css/custom.css">       <!-- 꾸미기 2 -->
+
+  <!-- type="image/x-icon" tab창 작은 아이콘으로 만들어주는~ -->
+  <link rel="icon" href="https://private-user-images.githubusercontent.com/163831227/367177726-526823c2-828a-4fb5-b6dc-bcae80749284.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjYyMTAyNjQsIm5iZiI6MTcyNjIwOTk2NCwicGF0aCI6Ii8xNjM4MzEyMjcvMzY3MTc3NzI2LTUyNjgyM2MyLTgyOGEtNGZiNS1iNmRjLWJjYWU4MDc0OTI4NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QwNjQ2MDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YjcyMjZhODZhYjBmZWNlNGM0MmFlNGE2NjJmZjMwMjljYWRiZDZhZTdhYTNhNTA4ZTJiNTRhNzYyMTBmZWM2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ZSmHc7XbPUbr8WMysSQfQcaTx9ieBuHxyoo4HZ2tlJc" type="image/x-icon">
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+  <script src="./js/loding.js" defer></script>
+
+  <script>
+    // 우클릭 금지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  
+    // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+        (e.ctrlKey && e.key === 'U') || 
+        (e.ctrlKey && e.key === 'S') || 
+        (e.ctrlKey && e.key === 'P')
+      ) {
+        e.preventDefault();
+      }
+    });
+  
+    // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+    (function() {
+      const threshold = 160; // 개발자 도구 감지 기준
+      const detectDevTools = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  
+        if (widthThreshold || heightThreshold) {
+          document.body.innerHTML = ""; // 화면 내용을 비움
+        }
+      };
+      setInterval(detectDevTools, 1000); // 1초마다 감지
+    })();
+  </script>
+  
+
+
+</head>
+
+  
+
+
+  <body>
+
+    <div class="full">
+        <a style="cursor: url('https://private-user-images.githubusercontent.com/163831227/368196405-9b3b1cfd-f520-4b57-9fdb-66cf5934f992.png'), auto;">
+        </a>
+    </div>
+
+    
+    <h1><a href="index.html">LUCKY</a></h1>
+
+    <ol>
+      <li><a href="loding.html?page=운세.html">운세</a></li>
+      <li><a href="loding.html?page=테스트.html">테스트</a></li>
+      <li><a href="loding.html?page=응원글귀.html">응원글귀</a></li>
+      <li><a href="loding.html?page=타이핑.html">타이핑</a></li>
+      <li><a href="guest.html"></ahref>> 방명록 </a></li>
+    </ol>
+  
+  <!-- <p><a href="https://blog.naver.com/didrhrl37" target="_blank" title="html5 speicification">제작자 블로그</a></p> -->
+  <p><a target="_blank" title="html5 speicification">제작자 이메일 didrhrl37@naver.com</a></p>
+
+</body>
+
+</html>

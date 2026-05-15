@@ -1,0 +1,59 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(227, 255, 214);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;
+    ::selection {  background-color: #8aad60;} 
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+h1 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: black;
+}
+
+h3 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: rgb(204, 195, 195);
+    text-align: center;
+}
+
+/* 전체 글 설정 */
+#quote-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* text */
+#quote-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* author */
+#quote-author {
+    font-size: 18px;
+    font-style: italic;
+    color: #5d6b7f;
+}

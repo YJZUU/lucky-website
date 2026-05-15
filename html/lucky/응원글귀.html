@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>ZUU - 오늘의 한구절 </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/quotes.css">
+  <link rel="stylesheet" href="./css/comments.css">
+  <link rel="icon" type="image/png" href="./img/pixel/play_music.gif"/>
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+
+  <script>
+    // 우클릭 금지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  
+    // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+        (e.ctrlKey && e.key === 'U') || 
+        (e.ctrlKey && e.key === 'S') || 
+        (e.ctrlKey && e.key === 'P')
+      ) {
+        e.preventDefault();
+      }
+    });
+  
+    // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+    (function() {
+      const threshold = 160; // 개발자 도구 감지 기준
+      const detectDevTools = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  
+        if (widthThreshold || heightThreshold) {
+          document.body.innerHTML = ""; // 화면 내용을 비움
+        }
+      };
+      setInterval(detectDevTools, 1000); // 1초마다 감지
+    })();
+  </script>
+
+
+</head>
+
+<body>
+  <h1><a href="index.html">HOME으로 가기...🏠</a></h1>
+
+    <!-- 응원글귀 -->
+    <section id="quote-section">
+      <div id="quote-container">
+          <blockquote>
+              <p id="quote-text"></p>
+              <cite id="quote-author"></cite>
+          </blockquote>
+      </div>
+    </section>
+
+
+    <section id="comment-section">
+      <h3>추가하고 싶은 구절을 입력해 주세요. (출처 표기 바람)</h3>
+      <div id="notification" class="hidden">등록되었습니다</div>
+      <div class="comment-form">
+        <form id="commentForm">
+          <div class="bubble">
+            <textarea
+              placeholder="내용을 입력해 주세요."
+              name="comments"
+              required>
+            </textarea>
+          </div>
+          <button type="submit">등록</button>
+        </form>
+      </div>
+      <div id="comment-list">
+        <!-- 댓글 확인 창 -->
+      </div>
+    </section>  
+
+    
+
+
+  <script src="./js/quotes.js"></script>
+  <script type="module" src="./js/comments.js"></script>
+</body>
+
+</html>

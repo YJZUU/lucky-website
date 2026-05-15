@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>ZUU - 오늘의 운세</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/fortune.css">
+  <link rel="icon" type="image/png" href="./img/pixel/music.png"/>
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+  <script>
+    // 우클릭 금지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  
+    // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+        (e.ctrlKey && e.key === 'U') || 
+        (e.ctrlKey && e.key === 'S') || 
+        (e.ctrlKey && e.key === 'P')
+      ) {
+        e.preventDefault();
+      }
+    });
+  
+    // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+    (function() {
+      const threshold = 160; // 개발자 도구 감지 기준
+      const detectDevTools = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  
+        if (widthThreshold || heightThreshold) {
+          document.body.innerHTML = ""; // 화면 내용을 비움
+        }
+      };
+      setInterval(detectDevTools, 1000); // 1초마다 감지
+    })();
+  </script>
+</head>
+
+<body>
+  <h1><a href="index.html">HOME으로 가기...🏠</a></h1>
+  <p> <a target="_blank" title="html5 speicification"> 보고 싶은 운세를 클릭하세요 </a> </p>
+
+
+  <ol>
+      <li><a href="성공.html">성공</a></li>
+      <li><a href="재물.html">재물</a></li>
+      <li><a href="우정.html">우정</a></li>
+      <li><a href="사랑.html">사랑</a></li>
+  </ol>
+
+  <p2> 출처 </p2>
+  <p3> <a href="https://www.flaticon.com/kr/free-icons/" title="클로버 아이콘">클로버 아이콘 제작자: Hilmy Abiyyu A. - Flaticon</a> </p3>
+  <p4> <a href="https://www.flaticon.com/kr/free-icons/" title="돈 아이콘">돈 아이콘 제작자: Freepik - Flaticon</a> </p4>
+  <p5> <a href="https://www.flaticon.com/kr/free-icons/" title=" 아이콘"> 아이콘 제작자: flatart_icons - Flaticon</a> </p5>
+  <p6> <a href="https://www.flaticon.com/kr/free-icons/" title="사랑 아이콘">사랑 아이콘 제작자: Lalaka - Flaticon</a> </p6>
+
+  
+</body>
+</html>

@@ -1,0 +1,229 @@
+
+@media (max-width: 767px) {
+    html {
+        overflow: hidden;
+    }
+
+    .full {
+        width: 100vw;
+        height: 100vh;
+        position: relative;            /* 자식 요소 절대 위치 사용할 수 있도록 설정 */
+    }
+
+    .clover-container {
+        position: relative;
+        width: calc(500 * var(--unit));
+        height: calc(500 * var(--unit));
+        margin-bottom: 20px;
+    }
+
+    .clover-container > div {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background-color: var(--green);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/clover_2.jpg");
+    background-repeat: no-repeat;                               /* 배경 이미지 반복 제거 */
+    background-size: cover;                                     /* 배경 이미지 꽉 차게 */
+    overflow: hidden;                                         
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;   
+    ::selection {  background-color: #8aad60;}  /* 드래그 시 색상 */
+}    
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    border: none;                       /* 버튼 테두리 제거 */
+    font-family: Pretendard;
+    background-color: transparent;
+    transition: all 0.2s;               /* 부드러운 전환 */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 각 항목의 위치 설정 */
+ol {
+    list-style-type: none; /* 기본 목록 스타일 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    position: absolute;
+    left: 2%;
+    font-size: 48px;
+    font-weight: bold; 
+    color: black;
+}
+
+p {
+    position: relative;
+    left: 2%;
+    font-size: 15px;
+    color: gray;
+}
+
+
+
+li {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    margin: 5px;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+
+
+/* 운세 */
+li:nth-child(1) {
+    top: 30%;
+    left: 20%;
+    position: absolute !important;
+}
+
+/* 테스트 */
+li:nth-child(2) {
+    bottom: 20%;
+    left: 31%;
+    position: absolute !important;
+}
+
+/* 응원글귀 */
+li:nth-child(3) {
+    top: 35%;
+    left: 47%;
+    position: absolute !important;
+}
+
+/* 타이핑 */
+li:nth-child(4) {
+    bottom: 30%;
+    right: 30%;
+    position: absolute !important;
+}
+
+/* 방명록 */
+li:nth-child(5) {
+    top: 20%;
+    right: 25%;
+    position: absolute !important;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* iframe 테두리 제거 */
+    display: block; /* iframe 주변의 여백 제거 */
+}
+
+li:hover {
+    transform: rotate(360deg) scale(1.5);
+    background-color: #CBE4C2;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+
+
+
+/* 모바일 가로 화면 (481px ~ 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* 스크롤 허용 */
+    }
+
+    /* 전체 컨테이너 */
+    .full {
+        width: 100vw; /* 화면 너비에 맞춤 */
+        height: 100vh; /* 화면 높이에 맞춤 */
+        position: relative;
+        padding: 10px; /* 내부 여백 */
+        box-sizing: border-box;
+    }
+
+    /* li 요소 조정 */
+    li {
+        width: 80px; /* li 요소 너비 조정 */
+        height: 80px; /* li 요소 높이 조정 */
+        font-size: 16px; /* 폰트 크기 조정 */
+        margin: 5px; /* 요소 간 간격 */
+        position: static; /* 위치 자동 조정 */
+        display: inline-block; /* 가로 정렬 */
+    }
+
+    /* 제목 스타일 */
+    h1 {
+        font-size: 32px; /* 제목 폰트 크기 조정 */
+        position: static; /* 위치 자동 조정 */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* 설명 스타일 */
+    p {
+        font-size: 14px; /* 설명 폰트 크기 축소 */
+        position: static;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    /* 클로버 컨테이너 조정 */
+    .clover-container {
+        width: 100%; /* 화면 너비에 맞춤 */
+        height: auto; /* 높이 자동 조정 */
+        display: flex;
+        flex-wrap: wrap; /* 요소가 넘치면 줄바꿈 */
+        justify-content: center; /* 중앙 정렬 */
+        gap: 10px; /* 요소 간격 */
+        margin-bottom: 20px;
+    }
+
+    /* 배경 이미지 조정 */
+    html, body {
+        background-size: contain; /* 배경 이미지 비율 유지 */
+        background-position: center; /* 이미지 중앙 배치 */
+    }
+
+    /* iframe */
+    iframe {
+        width: 100%; /* iframe 너비 맞춤 */
+        height: 80vh; /* iframe 높이 조정 */
+    }
+}

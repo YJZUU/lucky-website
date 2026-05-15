@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+    <title> 오늘의 재물운을 빌어요💰 </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/money.css">
+    <link rel="icon" type="image/png" href="./img/pixel/play_music.gif"/>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+    <script>
+      // 우클릭 금지
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+      });
+    
+      // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+      document.addEventListener('keydown', function (e) {
+        if (
+          e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+          (e.ctrlKey && e.key === 'U') || 
+          (e.ctrlKey && e.key === 'S') || 
+          (e.ctrlKey && e.key === 'P')
+        ) {
+          e.preventDefault();
+        }
+      });
+    
+      // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+      (function() {
+        const threshold = 160; // 개발자 도구 감지 기준
+        const detectDevTools = () => {
+          const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+          const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    
+          if (widthThreshold || heightThreshold) {
+            document.body.innerHTML = ""; // 화면 내용을 비움
+          }
+        };
+        setInterval(detectDevTools, 1000); // 1초마다 감지
+      })();
+    </script>
+</head>
+
+<body>
+    <h1><a href="index.html">HOME으로 가기...🏠</a></h1>
+    <p><a href="운세.html">다른 운세도 보러 가기</a></p>
+    
+    <!-- 운세 로딩 -->
+    <div class="money-container">
+        <div class="money"></div>
+        <div class="money-text">오늘 당신의 재물 운세는...</div>
+    </div>
+
+    <!-- 운세 결과 -->
+    <div id="money-result" class="money-result">
+        <div class="percentage"></div>
+        <div class="money-text"></div>
+        <div class="advice"></div>
+    </div>
+    
+
+    <script src="./js/money.js"></script>
+
+
+</html> 

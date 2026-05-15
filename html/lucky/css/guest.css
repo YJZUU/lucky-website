@@ -1,0 +1,362 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(227, 255, 214);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;
+    ::selection {  background-color: #8aad60;}  /* 드래그 시 색상 */
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+
+
+h2 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: black;
+}
+
+p{
+    position: relative;
+    left: 40%;
+    top: 20%;
+    font-size: 25px;
+    font-weight: bold; 
+    color: black;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul,
+  li {
+    list-style: none;
+  }
+  
+  .comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 30px;
+    width: 600px;
+    margin: 0 auto;
+    position: absolute; /* 화면 중앙으로 배치하기 위해 position 속성 추가 */
+    top: 40%; /* 세로 가운데 정렬 */
+    left: 50%; /* 가로 가운데 정렬 */
+    transform: translate(-50%, -50%); /* 가운데 정렬 보정 */
+  }
+
+  
+  .comment > li {
+    margin-top: 20px;
+  }
+  .comment > li:nth-child(1) {
+    margin: 0px;
+  }
+  
+
+  
+  .comment-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .comment-row {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .comment-row > li:nth-child(2) {
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding-left: 25px;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .comment-row > li:nth-child(2) {
+    width: 85px;
+  }
+  
+  .comment-form > form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* 세로 중앙 정렬 */
+  }
+  
+  .comment-form > form > h4 {
+    width: 100%;
+    margin: 14px 0 14px 0;
+  }
+  
+  .comment-content {
+    cursor: pointer;
+    word-break: break-all;
+    padding-right: 25px;
+  }
+
+  
+  /* 댓글 내용 */
+  .eot {
+    width: 100%; /* 너비 최대로 설정 */
+    height: 60px;
+    padding: 10px 14px; /* 안쪽 여백 */
+    font-size: 16px;
+  }
+
+  .eot > input {
+    height: 100%;
+    font-size: 16px;
+  }
+  
+  
+
+  /* 닉네임과 비밀번호 */
+  .nickname {
+    position: relative; /* 부모 요소 기준으로 위치 조정 */
+    top: 1px; /* 위쪽 여백 */
+    left: 120px; /* 왼쪽 여백 */
+    width: 20%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .nickname > input {
+    height: 100%;
+    font-size: 13px; /* 글자 크기 */
+  }
+
+
+  .password {
+    position: relative;
+    top: 1px;
+    left: 70px;
+    width: 20%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .password > input {
+    height: 100%;
+    font-size: 13px; /* 글자 크기 */
+  }
+
+  /* 비밀글 체크박스 스타일 */
+  .comment-form label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+  }
+
+  .comment-form input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    accent-color: #8aad60; /* 체크 색상 */
+    cursor: pointer;
+  }
+  
+
+  .int {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    padding-right: 25px;
+    line-height: 29px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  
+  /* 등록 */
+  .btn {
+    position: relative;
+    left: -14px;
+    width: 18%;
+    padding: 18px 0 16px;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .comment-delete-btn {
+    display: inline-block;
+    margin-left: 7px;
+    cursor: pointer;
+  }
+  
+  .comment-update-input {
+    border: none;
+    border-bottom: 1px solid #333;
+    font-size: 16px;
+    color: #666;
+    outline: none;
+  }
+
+
+/* 댓글 목록창 수정 */
+#guestbook-entries {
+  top: 50%;
+  width: 600px;
+  margin: 20px auto 0; /* 위쪽 여백 추가 */
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow-y: auto; /* 스크롤 생성 */
+  max-height: 300px; /* 목록 높이 제한 */
+  position: relative; /* 위치 조정 */
+}
+
+#guestbook-entries li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+#guestbook-entries li:last-child {
+  border-bottom: none;
+}
+
+/* 댓글 아이템 스타일 */
+.comment-item {
+  padding: 10px 10px; /* 내부 여백 */
+  border-bottom: 1px solid #ddd; /* 댓글 구분선 */
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  gap: 5px; /* 각 요소 간 여백 */
+}
+
+/* 댓글 헤더: 닉네임과 날짜를 같은 줄에 배치 */
+.comment-header {
+  display: flex;
+  justify-content: space-between; /* 닉네임과 시간을 양쪽으로 배치 */
+  align-items: center; /* 수직 가운데 정렬 */
+  margin-bottom: 5px; /* 닉네임과 댓글 내용 사이 여백 */
+}
+
+/* 닉네임 스타일 */
+.comment-header .nickname {
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-right: 10px; /* 닉네임과 시간 사이 여백 */
+}
+
+/* 날짜 스타일 */
+.comment-header .date {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 댓글 내용 */
+.comment-item .content {
+  font-size: 14px;
+  color: #333;
+  word-break: break-word; /* 길이가 긴 단어 줄바꿈 */
+}
+
+
+
+
+/* 모바일 세로 화면 (480px 이하) */
+@media (max-width: 480px) {
+
+  html, body {
+    overflow: auto; /* 스크롤 허용 */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 댓글 입력 폼 */
+  .comment-form {
+    margin: 0; /* 화면 상단에 딱 붙이기 */
+    padding: 5px; /* 안쪽 여백 최소화 */
+    gap: 8px; /* 입력 요소 사이 간격 */
+  }
+
+  /* 입력 필드 스타일 */
+  .comment-form input[type="text"],
+  .comment-form input[type="password"],
+  .comment-form textarea {
+    left: 100px;
+    width: 70%; /* 너비를 화면에 맞춤 */
+    height: 36px; /* 입력 필드 높이 조정 */
+    font-size: 12px; /* 폰트 크기 축소 */
+    padding: 5px; /* 내부 여백 최소화 */
+    box-sizing: border-box; /* padding 포함해서 너비 계산 */
+  }
+
+  /* 비밀글 체크박스와 라벨 */
+  .comment-form label {
+    display: flex; /* 체크박스와 라벨 나란히 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 4px; /* 간격 최소화 */
+    font-size: 12px; /* 폰트 크기 축소 */
+  }
+
+  /* 등록 버튼 스타일 */
+  .comment-form input[type="submit"] {
+    width: 10%; /* 버튼 너비를 화면에 꽉 맞춤 */
+    height: 38px; /* 버튼 높이 조정 */
+    font-size: 14px; /* 버튼 폰트 크기 축소 */
+    padding: 5px; /* 버튼 안쪽 여백 */
+  }
+}
+
+
+/* 모바일 가로 화면 및 작은 태블릿 (481px~768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .comment-form {
+    padding: 10px;
+  }
+
+  .comment-header {
+    gap: 5px;
+  }
+
+  .content {
+    font-size: 13px;
+  }
+}

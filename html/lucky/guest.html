@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang = "ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 방명록 남기는 곳...✏️ </title>
+    <link rel="stylesheet" href="./css/guest.css">
+    <link rel="icon" type="image/png" href="./img/pixel/play_music.gif"/>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="/js/guest.js" type="module"></script>
+
+    <script>
+        // 우클릭 금지
+        document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+        });
+      
+        // 단축키 금지 (F12, Ctrl+Shift+I, Ctrl+U 등)
+        document.addEventListener('keydown', function (e) {
+          if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+            (e.ctrlKey && e.key === 'U') || 
+            (e.ctrlKey && e.key === 'S') || 
+            (e.ctrlKey && e.key === 'P')
+          ) {
+            e.preventDefault();
+          }
+        });
+      
+        // 개발자 도구 감지 및 차단 (화면 크기 변화 감지)
+        (function() {
+          const threshold = 160; // 개발자 도구 감지 기준
+          const detectDevTools = () => {
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+      
+            if (widthThreshold || heightThreshold) {
+              document.body.innerHTML = ""; // 화면 내용을 비움
+            }
+          };
+          setInterval(detectDevTools, 1000); // 1초마다 감지
+        })();
+      </script>
+</head>
+
+<body>
+    <h2><a href="index.html">HOME으로 가기...🏠</a></h2>
+    
+    <p> 자유롭게 의견을 남겨 주세요. 👀 </p>
+
+    <div>
+      <ul class="comment">
+          <li class="comment-form">
+              <form id="commentFrm">
+                  <h4> 댓글 남기기 <span></span></h4>
+                  
+                  <!-- 내용 입력 (크게) -->
+                  <span class="eot">
+                      <input type="text" placeholder="내용을 입력해주세요." class="int" name="content" />
+                  </span>
+                              
+                  <!-- 닉네임 입력 -->
+                  <span class="nickname">
+                      <input type="text" placeholder="닉네임" class="int" name="nickname" />
+                  </span>
+                  
+                  <!-- 비밀번호 입력 -->
+                  <span class="password">
+                      <input type="password" placeholder="비밀번호" class="int" name="password" />
+                  </span>
+
+                  <!-- 비밀글 체크박스 -->
+                  <label>
+                       <input type="checkbox" id="isSecret"> 비밀글
+                  </label>
+                  
+                  <!-- 등록 버튼 -->
+                  <input type="submit" class="btn" value="등록" />
+              </form>
+          </li>
+          <li id="comment-list"></li>
+      </ul>
+  </div>
+
+    <!-- 방명록 목록 -->
+    <div id="guestbook-entries"></div>
+
+
+</body>
+
+</html>

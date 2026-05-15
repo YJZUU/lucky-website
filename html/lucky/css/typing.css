@@ -1,0 +1,162 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(227, 255, 214);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;
+    ::selection {  background-color: #8aad60;}  /* 드래그 시 색상 */
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+li {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    margin: 5px;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+li:hover {
+    transform: rotate(360deg) scale(1.5);
+    background-color: #CBE4C2;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+/* 타이틀 */
+h2 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: black;
+}
+
+p {
+    position: relative;
+    left: 2%;
+}
+
+/* 점수 공지 */
+#notice {
+    position: absolute; /* 절대 위치로 설정 */
+    left: 100px; /* 화면 왼쪽에서 10px 떨어지게 */
+    top: 330px; /* 화면 위쪽에서 50px 떨어지게 */
+    width: 200px; /* 적당한 너비 설정 */
+    background-color: #f8f9fa; /* 부드러운 배경색 */
+    border: 1px solid #ddd; /* 테두리 추가 */
+    border-radius: 5px; /* 테두리 둥글게 */
+    padding: 10px; /* 안쪽 여백 */
+    font-size: 14px; /* 글자 크기 */
+    font-family: "NanumSquareNeo", Pretendard, Arial, sans-serif; /* 폰트 설정 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
+    z-index: 10; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+/* 상단 여백 제거 */
+.container {
+    margin: 0 auto;
+    padding-top: 0px; /* 약간의 공간 */
+    max-width: 800px;
+    text-align: center;
+}
+
+#game-area {
+    width: 100%;
+    height: 400px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px; /* 공간 확보 */
+}
+
+.word {
+    position: absolute;
+    top: -30px;
+    font-size: 20px;
+    color: #333;
+    transition: top 0.1s linear;
+}
+
+#game-controls {
+    margin-top: 20px;
+}
+
+/* 게임 헤더 */
+#game-header {
+    margin-top: 5px; /* 상단 간격 최소화 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-header h1 {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#difficulty-select {
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
+
+#input {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#time, #score {
+    font-weight: bold;
+}
+
+button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    left: 12px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

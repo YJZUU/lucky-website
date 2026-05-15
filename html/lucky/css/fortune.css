@@ -1,0 +1,225 @@
+
+@media (max-width: 767px) {
+    html {
+        overflow: hidden;
+    }
+
+    .full {
+        width: 100vw;
+        height: 100vh;
+        position: relative;            /* 자식 요소 절대 위치 사용할 수 있도록 설정 */
+    }
+
+    .clover-container {
+        position: relative;
+        width: calc(500 * var(--unit));
+        height: calc(500 * var(--unit));
+        margin-bottom: 20px;
+    }
+
+    .clover-container > div {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background-color: var(--green);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(227, 255, 214);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body {
+    font-family: "NanumSquareNeo", Pretendard, system-ui, Roboto;
+    ::selection {  background-color: #8aad60;}  /* 드래그 시 색상 */
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    border: none;                       /* 버튼 테두리 제거 */
+    font-family: Pretendard;
+    background-color: transparent;
+    transition: all 0.2s;               /* 부드러운 전환 */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+li {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    margin: 5px;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+li:hover {
+    transform: rotate(360deg) scale(1.5);
+    background-color: #CBE4C2;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration-line: none;
+}
+
+/* 각 항목의 위치 설정 */
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 타이틀 */
+h1 {
+    position: relative;
+    left: 2%;
+    font-weight: bold; 
+    color: black;
+}
+
+p {
+    position: relative;
+    left: 2%;
+    color: rgb(39, 108, 63);
+    font-size: 30px;
+}
+
+p2 {
+    position: absolute;
+    left: 2%;
+    color: rgb(167, 167, 167);
+    bottom: 20px;
+    font-size: 15px;
+}
+
+/* 클로버 */
+p3 {
+    position: absolute;
+    left: 2%;
+    color: rgb(167, 167, 167);
+    bottom: 20px;
+    left: 90px;
+    font-size: 15px;
+}
+
+/* 돈 */
+p4 {
+    position: absolute;
+    left: 2%;
+    color: rgb(167, 167, 167);
+    bottom: 20px;
+    left: 450px;
+    font-size: 15px;
+}
+
+/* 우정 */
+p5{
+    position: absolute;
+    left: 2%;
+    color: rgb(167, 167, 167);
+    bottom: 20px;
+    left: 730px;
+    font-size: 15px;
+}
+
+/* 사랑 */
+p6{
+    position: absolute;
+    left: 2%;
+    color: rgb(167, 167, 167);
+    bottom: 20px;
+    left: 1020px;
+    font-size: 15px;
+}
+
+
+/* 성공 */
+li:nth-child(1) {
+    top: 40%;
+    left: 20%;
+    position: absolute !important;
+    background-image: url("../img/fortune.png");
+}
+
+
+/* 재물 */
+li:nth-child(2) {
+    top: 40%;
+    left: 37%;
+    position: absolute !important;
+    background-image: url("../img/money.png");
+}
+
+/* 우정 */
+li:nth-child(3) {
+    top: 40%;
+    right: 37%;
+    position: absolute !important;
+    background-image: url("../img/tulip.png");
+}
+
+/* 사랑 */
+li:nth-child(4) {
+    top: 40%;
+    right: 20%;
+    position: absolute !important;
+    background-image: url("../img/heart.png");
+}
+
+
+
+
+/* 모바일 화면 (가로, 작은 기기 대응) */
+@media (max-width: 768px) {
+    .clover-container {
+        display: flex;            /* 요소들을 가로 정렬 */
+        flex-wrap: wrap;          /* 줄바꿈 허용 */
+        justify-content: center;  /* 중앙 정렬 */
+        gap: 15px;                /* 요소 사이 여백 */
+        padding: 10px;            /* 내부 여백 추가 */
+    }
+
+    li {
+        position: relative;       /* 절대 위치 제거 */
+        width: 80px;              /* 크기 조정 */
+        height: 80px;
+        margin: 0;                /* 외부 여백 제거 */
+        font-size: 16px;          /* 폰트 크기 축소 */
+        text-align: center;
+        line-height: 80px;        /* 텍스트 중앙 정렬 */
+    }
+}

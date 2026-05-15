@@ -1,0 +1,15 @@
+[build]
+  command = "echo 'Injecting environment variables'"
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+
+[template]
+  [template.env]
+    FIREBASE_API_KEY = "${FIREBASE_API_KEY}"
+    FIREBASE_AUTH_DOMAIN = "${FIREBASE_AUTH_DOMAIN}"
+    FIREBASE_PROJECT_ID = "${FIREBASE_PROJECT_ID}"
+    FIREBASE_APP_ID = "${FIREBASE_APP_ID}"
